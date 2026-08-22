@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #12001f, #31002f, #17002d);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Glow */
+body::before {
+    content: "";
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: #ff1493;
+    filter: blur(150px);
+    opacity: 0.35;
+
+    border-radius: 50%;
+
+    animation: glow 5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        transform: translate(-150px, -100px);
+    }
+
+    to {
+        transform: translate(150px, 100px);
+    }
+}
+
+/* Main Card */
+.card {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 600px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow:
+        0 0 50px rgba(255, 20, 147, 0.25);
+}
+
+/* Small Text */
+.small-text {
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    opacity: 0.8;
+
+    margin-bottom: 15px;
+}
+
+/* Main Heading */
+h1 {
+    font-size: clamp(38px, 8vw, 65px);
+
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ff69b4,
+        #ffffff
+    );
+
+    background-size: 200%;
+
+    background-clip: text;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: textGlow 3s infinite linear;
+}
+
+@keyframes textGlow {
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 200%;
+    }
+}
+
+/* Name */
+.name {
+    font-size: clamp(28px, 6vw, 45px);
+
+    color: #ff69b4;
+
+    text-shadow:
+        0 0 10px #ff1493,
+        0 0 25px #ff1493;
+
+    margin-bottom: 20px;
+}
+
+/* Message */
+.message {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #f5d9ec;
+
+    margin-bottom: 30px;
+}
+
+/* Button */
+button {
+    border: none;
+    outline: none;
+
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #ff1493,
+        #9b00ff
+    );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px rgba(255, 20, 147, 0.5);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 40px rgba(255, 20, 147, 0.8);
+}
+
+/* Surprise Message */
+#surprise {
+    display: none;
+
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    color: #ffd6ef;
+
+    animation: appear 0.8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+
+    bottom: -30px;
+
+    font-size: 22px;
+
+    animation: floatUp linear forwards;
+
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform:
+            translateY(0)
+            scale(0.7);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            scale(1.4)
+            rotate(20deg);
+
+        opacity: 0;
+    }
+}
+
+/* Sparkles */
+.sparkle {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px white;
+
+    animation:
+        sparkle 2s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+
+    .card {
+        padding: 35px 20px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+
+    button {
+        padding: 13px 25px;
+    }
+}
