@@ -1,111 +1,238 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ritika 🎂💗</title>
 
-    <title>Happy Birthday Pari ❤️</title>
-
-    <!-- CSS File -->
-    <link rel="stylesheet" href="style.css">
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;font-family:'Trebuchet MS',sans-serif;
+ background:linear-gradient(135deg,#ffe0ef,#e9dcff,#fff1f5);
+ color:#713653;text-align:center;overflow-x:hidden
+}
+header{padding:35px 15px 15px}
+.tag{background:white;padding:9px 18px;border-radius:30px;
+ display:inline-block;box-shadow:0 4px 15px #d98cb344}
+h1{font-size:clamp(34px,8vw,65px);margin:22px 0 8px;
+ color:#e64e91;text-shadow:2px 3px #fff}
+h2{color:#d94c8b}
+p{line-height:1.8}
+section{
+ width:min(900px,92%);margin:22px auto;padding:25px 20px;
+ background:#ffffffd9;border:2px solid #fff;border-radius:25px;
+ box-shadow:0 10px 30px #b46c9b20
+}
+button{
+ border:0;border-radius:25px;padding:13px 20px;margin:8px;
+ background:linear-gradient(135deg,#f66da8,#bd81ed);
+ color:white;font-size:15px;font-weight:bold;cursor:pointer;
+ box-shadow:0 5px 12px #d477ad33;transition:.2s
+}
+button:hover{transform:translateY(-3px)}
+.name{font-size:clamp(38px,9vw,65px);font-weight:bold;color:#bd62d5}
+.small{font-size:18px}
+#surprise,#letter,#certificate{display:none;margin:20px auto;padding:20px;
+ background:#fff0f7;border-radius:20px;line-height:1.9}
+.gift{font-size:75px;cursor:pointer;display:inline-block;transition:.3s}
+.gift:hover{transform:rotate(-10deg) scale(1.1)}
+.cake{font-size:75px;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.heart{position:fixed;bottom:-40px;pointer-events:none;animation:floatUp 5s linear forwards;z-index:5}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.reason{background:#fff0f7;border-radius:15px;padding:15px;cursor:pointer;min-height:90px}
+.reason span{display:block;margin-top:8px}
+footer{padding:30px 12px 45px}
+#countdown{font-size:20px;font-weight:bold;color:#cf4387}
+input[type=range]{width:80%;accent-color:#e64e91}
+iframe{width:100%;max-width:560px;aspect-ratio:16/9;border:0;border-radius:16px}
+</style>
 </head>
-
 <body>
 
-    <!-- Background Sparkles -->
-    <div class="sparkle" style="top:15%; left:15%;"></div>
-    <div class="sparkle" style="top:25%; left:80%; animation-delay:.5s;"></div>
-    <div class="sparkle" style="top:70%; left:10%; animation-delay:1s;"></div>
-    <div class="sparkle" style="top:80%; left:85%; animation-delay:1.5s;"></div>
-    <div class="sparkle" style="top:12%; left:55%; animation-delay:.8s;"></div>
+<header>
+ <div class="tag">🎀 A Special Day for Someone Special 🎀</div>
+ <h1>Happy Birthday</h1>
+ <div class="name">Ritika 💗</div>
+ <p class="small">Chapter 22 begins! 🎂✨</p>
+ <p>15 October • Birthday Queen 👑</p>
+ <div id="countdown"></div>
+</header>
 
+<section>
+ <div style="font-size:55px">💐🧸💝</div>
+ <h2>Dear Ritika,</h2>
+ <p>
+  Happy 22nd Birthday! 🥳💖 Tumhari life happiness, success,
+  pyaar aur endless smiles se bhari rahe. Hamesha aise hi khush
+  rehna, apne dreams poore karna aur apni cute si pagalpan wali
+  personality kabhi mat badalna. ✨
+ </p>
+ <p>Have the most beautiful birthday ever! 🎂💕</p>
+ <strong>Lots of wishes, Chander ❤️</strong>
+</section>
 
-    <!-- Main Card -->
-    <div class="card">
+<section>
+ <h2>😂 Ek Special Message Meri Favourite Dustbin Ke Liye 🗑️💗</h2>
+ <p>
+  Madam Ritika ji! Aaj aap 22 saal ki ho gayi hain! 🎉
+  Umar badh rahi hai, lekin mujhe “Dust” bolne ki aadat abhi tak
+  nahi gayi! 😂 Khud toh badi innocent banti ho aur doosron ko
+  chidhane mein PhD kar rakhi hai! 😏
+ </p>
+ <p>
+  Aaj tumhara birthday hai, isliye tumhari saari ghatiya harkatein
+  maaf… sirf aaj ke liye! Kal se phir hisaab hoga! 🤣💗
+ </p>
+ <button onclick="showCertificate()">Unlock Your Official Dust Certificate 🏆</button>
+ <div id="certificate">
+  🏆 <h2>Official Dust Certificate</h2>
+  Certified that <b>Ritika</b> has successfully completed 22 years
+  of cuteness, drama and Chander ko chidhane ki training! 😂
+  <p>Issued by: Chander, Chief Dust Inspector 🕵️‍♂️</p>
+ </div>
+</section>
 
-        <div class="small-text">
-            A Special Day ✨
-        </div>
+<section>
+ <h2>🎁 Ritika, Ek Secret Hai!</h2>
+ <p>Gift box ko tap karo, birthday queen! 👑</p>
+ <div class="gift" onclick="openGift()">🎁</div>
+ <div id="surprise">
+  <h2>Surpriseee! 💖</h2>
+  Chander ki taraf se tumhare liye virtual teddy bear 🧸,
+  unlimited chocolates 🍫, flowers 💐 aur dher saari wishes!
+  <br>Aaj Chander ko “Dust” bolne ka quota double…
+  par kal se normal service shuru! 😂❤️
+  <div style="font-size:50px">🧸🍫💐</div>
+ </div>
+</section>
 
-        <h1>
-            Happy Birthday
-        </h1>
+<section>
+ <h2>🎂 Make a Wish!</h2>
+ <div class="cake">🎂</div>
+ <p>Apni aankhein band karo aur ek beautiful wish maango. ✨</p>
+ <button onclick="makeWish()">Make a Wish ✨</button>
+ <div id="wishMessage"></div>
+</section>
 
-        <div class="name">
-            Pari ❤️
-        </div>
+<section>
+ <h2>💌 22 Little Birthday Surprises</h2>
+ <p>Har card tap karke ek cute message unlock karo!</p>
+ <div class="grid" id="reasons"></div>
+</section>
 
-        <p class="message">
-            Wishing you a beautiful birthday filled with
-            happiness, laughter, amazing memories and
-            lots of wonderful moments. ✨🎂
-        </p>
+<section>
+ <h2>🎶 Ritika Ki Favourite Song Vibes</h2>
+ <p><b>Ban Ja Tu — Badshah</b> 💗</p>
+ <p>Song sunne ke liye neeche play button dabao.</p>
+ <iframe
+  src="https://www.youtube-nocookie.com/embed?listType=search&list=Ban%20Ja%20Tu%20Badshah"
+  title="Search Ban Ja Tu Badshah on YouTube"
+  loading="lazy"
+  allow="encrypted-media; picture-in-picture"
+  allowfullscreen>
+ </iframe>
+ <p>Official song result available na ho toh YouTube par song search karke play kar lena. 🎧</p>
+</section>
 
-        <button onclick="showSurprise()">
-            Open Your Surprise 🎁
-        </button>
+<section>
+ <h2>💗 One Last Secret Letter</h2>
+ <button onclick="openLetter()">Chander ka Secret Letter Kholo 💌</button>
+ <div id="letter">
+  Dear Ritika, ❤️<br>
+  Mazak aur teasing apni jagah, par dil se wish karta hoon ki
+  tumhari life mein bahut saari khushiyan aayein. Tum jo bhi
+  achieve karna chahti ho, usmein success mile. Hamesha smile
+  karti rehna, apna khayal rakhna aur apni life ko enjoy karna.
+  <br><br>
+  Happy Birthday once again, Ritika! 🎂💗
+  <br><b>— Tumhara dost, Chander ❤️</b>
+ </div>
+</section>
 
-        <div id="surprise">
-            ✨ May your every dream come true! ✨
-            <br>
-            Keep smiling and keep shining ❤️
-        </div>
+<footer>
+ <div style="font-size:35px">💗✨🎀✨💗</div>
+ <h2>Happy Birthday, Ritika!</h2>
+ <p>Keep smiling, keep shining, and keep annoying Chander forever! 😂</p>
+ <p>Made with 💖 by Chander</p>
+</footer>
 
-    </div>
+<script>
+function showCertificate(){
+ document.getElementById('certificate').style.display='block';
+ hearts(12);
+}
+function openGift(){
+ document.getElementById('surprise').style.display='block';
+ hearts(35);
+}
+function openLetter(){
+ document.getElementById('letter').style.display='block';
+ hearts(22);
+}
+function makeWish(){
+ document.getElementById('wishMessage').innerHTML=
+ '✨ Your wish has been sent to the birthday universe! 💗🎉';
+ hearts(40);
+}
+function hearts(n){
+ const icons=['💗','💕','💖','✨','🌸','🎀'];
+ for(let i=0;i<n;i++){
+  const el=document.createElement('div');
+  el.className='heart';
+  el.textContent=icons[Math.floor(Math.random()*icons.length)];
+  el.style.left=Math.random()*100+'vw';
+  el.style.fontSize=(16+Math.random()*22)+'px';
+  el.style.animationDuration=(3+Math.random()*3)+'s';
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),6500);
+ }
+}
+const messages=[
+ 'Tum hamesha khush raho 💗','Keep shining, birthday queen 👑',
+ 'Unlimited chocolates tumhare liye 🍫','Dreams come true ✨',
+ 'Smile karti rehna 😊','Stay awesome 💖','Lots of happiness 💐',
+ 'Drama queen forever 😂','Success tumhare kadam choome 🌟',
+ 'Self-love always 🎀','Aaj sirf tumhari party 🎉',
+ 'Good vibes only 🌸','Teddy hugs 🧸','Beautiful memories 📸',
+ 'Stay confident 💪','Khushiyan hi khushiyan 💝',
+ 'Tumhari smile priceless hai 😊','Enjoy your day 🎂',
+ 'Keep growing 🌷','More adventures ahead 🦋',
+ 'Chander ki taraf se best wishes ❤️','Ab cake khilao! 😂🍰'
+];
+const grid=document.getElementById('reasons');
+messages.forEach((msg,i)=>{
+ const card=document.createElement('div');
+ card.className='reason';
+ card.innerHTML='🎀 Surprise '+(i+1)+'<span>Tap to reveal 💌</span>';
+ card.onclick=()=>{card.innerHTML='💗 '+msg;card.style.background='#ffe0ef';};
+ grid.appendChild(card);
+});
 
-
-    <!-- JavaScript -->
-    <script>
-
-        function showSurprise() {
-
-            const surprise = document.getElementById("surprise");
-
-            surprise.style.display = "block";
-
-            createHearts(25);
-        }
-
-
-        function createHearts(amount) {
-
-            for (let i = 0; i < amount; i++) {
-
-                const heart = document.createElement("div");
-
-                heart.classList.add("heart");
-
-                heart.innerHTML =
-                    ["❤️", "💖", "💕", "✨", "💗"]
-                    [Math.floor(Math.random() * 5)];
-
-                heart.style.left =
-                    Math.random() * 100 + "vw";
-
-                heart.style.animationDuration =
-                    (4 + Math.random() * 4) + "s";
-
-                heart.style.fontSize =
-                    (16 + Math.random() * 20) + "px";
-
-                document.body.appendChild(heart);
-
-                setTimeout(() => {
-                    heart.remove();
-                }, 8000);
-            }
-        }
-
-
-        /* Automatic Floating Hearts */
-
-        setInterval(() => {
-            createHearts(1);
-        }, 1200);
-
-    </script>
-
+// Indian Standard Time countdown: next/current 15 October
+function updateCountdown(){
+ const now=new Date();
+ const year=now.getFullYear();
+ const start=new Date(year,9,15,0,0,0);
+ const end=new Date(year,9,16,0,0,0);
+ const display=document.getElementById('countdown');
+ if(now>=start && now<end){
+  display.textContent='🎉 Today is Ritika’s Birthday! 🎂';
+ }else{
+  const target=now<start?start:new Date(year+1,9,15,0,0,0);
+  const diff=target-now;
+  const days=Math.floor(diff/86400000);
+  const hours=Math.floor(diff%86400000/3600000);
+  const mins=Math.floor(diff%3600000/60000);
+  display.textContent='🎂 Birthday countdown: '+days+'d '+hours+'h '+mins+'m';
+ }
+}
+updateCountdown();
+setInterval(updateCountdown,30000);
+setInterval(()=>hearts(1),1800);
+</script>
 </body>
-
 </html>
